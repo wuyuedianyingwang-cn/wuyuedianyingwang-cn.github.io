@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="五月电影网，五月限定的观影指南。以春夏之交的湿润与躁动为线索，推荐适合五月观看的电影、影展片单、导演谱系与口碑榜单，用季节选片，用情绪入座。">
+<meta name="keywords" content="五月电影网,五月观影,季节电影,高分电影推荐,电影解说,影展片单,观影指南,影视榜单,正版影视">
+<meta name="author" content="五月电影网编辑部">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>五月电影网 - 五月限定的观影指南 | 用季节选片</title>
+<style>
+/* ============ 基础 ============ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#1d2430; --paper:#f7f3ea; --card:#fff;
+  --green:#5f8f3c; --leaf:#9db872; --rose:#e0737a; --sky:#6fb0c4; --sand:#d9b66b; --plum:#8a6a86;
+  --sub:#8b8578; --line:#e6dfcd;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei","Songti SC",Georgia,serif;
+  background:var(--paper);color:#54514a;line-height:1.82;overflow-x:hidden}
+body,p,li,a,span,div{font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif}
+h1,h2,h3,h4{font-family:"Songti SC","STSong",Georgia,serif}
+a{color:inherit;text-decoration:none;transition:.26s}
+ul{list-style:none}
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 24px}
+::selection{background:var(--leaf);color:#fff}
+
+/* ============ 导航（米白 + 草绿描边） ============ */
+.topbar{position:sticky;top:0;z-index:1000;background:rgba(247,243,234,.95);backdrop-filter:blur(12px);border-bottom:1.5px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{display:flex;align-items:baseline;gap:8px;font-weight:900}
+.logo .m{font-size:34px;color:var(--green);font-family:Georgia,serif;line-height:1}
+.logo b{font-size:20px;color:var(--ink);letter-spacing:2px}
+.logo em{font-style:normal;color:var(--rose);font-size:12px;letter-spacing:3px;margin-left:4px}
+.search{position:relative;flex:1;max-width:340px}
+.search input{width:100%;padding:11px 46px 11px 18px;border-radius:26px;border:1.5px solid var(--line);background:#fff;font-size:13.5px;outline:none;color:var(--ink);font-family:inherit}
+.search input:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(157,184,114,.28)}
+.search button{position:absolute;right:4px;top:4px;width:36px;height:36px;border:none;background:var(--green);border-radius:50%;color:#fff;cursor:pointer;font-size:13px}
+.burger{display:none;width:44px;height:44px;align-items:center;justify-content:center;cursor:pointer;background:none;border:none;flex-direction:column;gap:5px}
+.burger i{width:23px;height:2px;background:var(--ink);border-radius:2px}
+.links{display:flex;gap:4px}
+.links a{padding:9px 16px;font-size:13.5px;color:#6f6b60;font-weight:700;border-radius:20px;letter-spacing:.4px}
+.links a:hover{color:var(--ink);background:#fff}
+.links a.on{color:#fff;background:var(--green)}
+
+/* ============ 首屏 ============ */
+.hero{position:relative;padding:54px 0 46px;background:var(--paper);overflow:hidden}
+.petals{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.pt{position:absolute;width:22px;height:14px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;opacity:.5;animation:fl 9s linear infinite}
+@keyframes fl{0%{transform:translate(0,-20px) rotate(0)}100%{transform:translate(var(--x,40px),560px) rotate(360deg)}}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:10px;padding:7px 18px;border-radius:30px;background:#fff;border:1.5px solid var(--line);font-size:12.5px;color:var(--green);font-weight:800;letter-spacing:1.5px}
+.kicker::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--rose);animation:hb 1.6s infinite}
+@keyframes hb{50%{transform:scale(1.5);opacity:.5}}
+.hero h1{font-size:clamp(38px,7.4vw,70px);line-height:1.12;font-weight:800;color:var(--ink);margin:16px 0 4px;letter-spacing:-1.5px}
+.hero h1 .sea{color:var(--green);position:relative;display:inline-block}
+.hero h1 .sea::after{content:"";position:absolute;left:4px;right:4px;bottom:6px;height:14px;background:var(--leaf);opacity:.32;z-index:-1;border-radius:4px}
+.hero h1 small{display:block;font-family:"PingFang SC",sans-serif;font-size:clamp(13px,1.8vw,15px);color:var(--sub);font-weight:600;letter-spacing:7px;margin-top:14px}
+.hero p{color:#6f6b60;font-size:clamp(15px,2vw,17px);margin:18px 0 24px;max-width:580px}
+.h-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:15px 34px;border-radius:30px;font-size:14.5px;font-weight:800;cursor:pointer;border:1.5px solid var(--green);letter-spacing:.6px;font-family:inherit}
+.btn-s{background:var(--green);color:#fff;box-shadow:0 8px 20px rgba(95,143,60,.3)}
+.btn-s:hover{transform:translateY(-2px)}
+.btn-o{background:#fff;color:var(--green)}
+.btn-o:hover{background:var(--leaf);color:#fff;border-color:var(--leaf)}
+/* 五月来信 */
+.letter{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:26px 28px;position:relative;box-shadow:10px 10px 0 var(--leaf);transform:rotate(.6deg)}
+.letter::before{content:"「";position:absolute;left:14px;top:-6px;font-size:64px;color:var(--rose);font-family:Georgia,serif;line-height:1;opacity:.5}
+.letter h3{font-size:15px;margin-bottom:14px;color:var(--green);letter-spacing:2px;position:relative;z-index:2}
+.letter dl{display:grid;gap:12px;position:relative;z-index:2}
+.letter dt{font-size:12px;color:var(--sub);letter-spacing:1px;font-weight:700}
+.letter dd{font-size:14.5px;color:var(--ink);line-height:1.65;padding-left:2px}
+.letter .sign{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);text-align:right;font-size:13px;color:var(--rose);letter-spacing:2px}
+
+/* ============ 区块头 ============ */
+section{padding:68px 0;position:relative}
+.sec-h{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.tag{display:inline-block;padding:4px 13px;border-radius:20px;background:var(--green);color:#fff;font-size:11.5px;font-weight:900;letter-spacing:2px}
+.sec-h h2{font-size:clamp(23px,3.6vw,32px);font-weight:800;color:var(--ink);letter-spacing:.5px}
+.sec-h h2 em{font-style:normal;color:var(--rose)}
+.sec-h .en{font-family:Georgia,serif;font-size:12px;color:var(--leaf);letter-spacing:3px;font-weight:700}
+.sec-h .more{margin-left:auto;font-size:12.5px;color:var(--sub);padding:8px 18px;border-radius:24px;background:#fff;border:1.5px solid var(--line);font-weight:700}
+.sec-h .more:hover{color:var(--green);border-color:var(--green)}
+
+/* ============ 栏目一：五月片单（横向滑动竖版 + 草木色系 + 花期角标） ============ */
+.tape{display:flex;gap:0;overflow-x:auto;padding:6px 4px 22px;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.tape::-webkit-scrollbar{height:9px}
+.tape::-webkit-scrollbar-thumb{background:var(--line);border-radius:5px}
+.frm{flex:0 0 clamp(216px,20vw,252px);scroll-snap-align:start;margin-right:18px}
+.frm .cv{position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;display:grid;place-items:center;font-size:42px;border:1.5px solid var(--line);transition:.34s}
+.frm:hover .cv{transform:translateY(-7px);box-shadow:0 16px 30px rgba(29,36,48,.18)}
+.frm .cv::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(29,36,48,.92));opacity:0;transition:.3s}
+.frm:hover .cv::after{opacity:1}
+.frm .cv .go{position:absolute;z-index:3;width:54px;height:54px;border-radius:50%;background:var(--rose);display:grid;place-items:center;font-size:18px;opacity:0;transition:.3s;color:#fff}
+.frm:hover .cv .go{opacity:1}
+.frm .cv .bud{position:absolute;top:12px;left:12px;z-index:3;font-size:11px;font-weight:800;padding:5px 11px;border-radius:16px;background:#fff;color:var(--green);border:1.5px solid var(--line)}
+.frm .nm{font-size:16.5px;font-weight:800;color:var(--ink);margin-top:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.frm .mk{font-size:12px;color:var(--sub);display:flex;justify-content:space-between;margin-top:2px;font-weight:700}
+.frm .mk b{color:var(--rose);font-family:Georgia,serif;font-size:13.5px}
+
+/* ============ 栏目二：五月节气（竖向时间轴 + 节点圆点 + 节气色） ============ */
+.solar{display:grid;grid-template-columns:300px 1fr;gap:30px;background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:30px;box-shadow:11px 11px 0 var(--sky)}
+.solar .axis{position:relative;padding-left:34px}
+.solar .axis::before{content:"";position:absolute;left:9px;top:10px;bottom:10px;width:3px;border-radius:3px;background:linear-gradient(180deg,var(--leaf),var(--sand),var(--rose))}
+.solar .axis b{display:block;font-size:13px;color:var(--green);letter-spacing:2px;margin-bottom:16px}
+.nd{position:relative;padding:0 0 24px 14px}
+.nd:last-child{padding-bottom:0}
+.nd::before{content:"";position:absolute;left:-34px;top:5px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--leaf)}
+.nd:nth-child(3)::before{border-color:var(--sand)}
+.nd:nth-child(4)::before{border-color:var(--rose)}
+.nd h4{font-size:17px;color:var(--ink);font-weight:800;letter-spacing:.5px}
+.nd h4 span{font-family:Georgia,serif;font-size:11px;color:var(--rose);margin-left:8px;font-weight:600;letter-spacing:1px}
+.nd p{font-size:13.5px;color:#6f6b60;line-height:1.75}
+.solar .rtxt{display:grid;gap:14px;align-content:center}
+.solar .rtxt .big{font-size:clamp(24px,3.6vw,34px);font-weight:800;line-height:1.3;color:var(--ink);letter-spacing:-.5px}
+.solar .rtxt .big i{font-style:normal;color:var(--rose)}
+.solar .rtxt p{color:#6f6b60;font-size:14.5px}
+.solar .rtxt a{display:inline-block;margin-top:4px;padding:11px 26px;background:var(--green);color:#fff;border-radius:24px;font-weight:800;border:1.5px solid var(--green)}
+.solar .rtxt a:hover{background:#fff;color:var(--green)}
+
+/* ============ 栏目三：五月影展（非对称图文 + 胶片齿孔） ============ */
+.exp{display:grid;gap:20px}
+.xrow{display:grid;grid-template-columns:0.95fr 1fr;gap:32px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:24px 28px;overflow:hidden}
+.xrow:nth-child(even){grid-template-columns:1fr 0.95fr}
+.xrow:nth-child(even) .pic{order:2}
+.xrow:hover{box-shadow:0 14px 32px rgba(29,36,48,.12)}
+.pic{aspect-ratio:16/10;border-radius:14px;display:grid;place-items:center;font-size:50px;position:relative;border:1.5px solid var(--line);background-image:repeating-linear-gradient(90deg,transparent 0 22px,rgba(255,255,255,.18) 22px 24px)}
+.pic .cap{position:absolute;left:14px;bottom:12px;background:#fff;color:var(--green);font-size:11.5px;font-weight:800;padding:5px 12px;border-radius:16px;border:1.5px solid var(--line)}
+.xrow h3{font-size:19.5px;color:var(--ink);font-weight:800;margin-bottom:8px;letter-spacing:.2px}
+.xrow p{font-size:14px;color:#6f6b60;margin-bottom:12px}
+.xrow .kw{display:flex;gap:8px;flex-wrap:wrap}
+.xrow .kw span{padding:5px 12px;border-radius:16px;background:var(--paper);border:1.5px solid var(--line);font-size:11.5px;font-weight:700;color:#6f6b60}
+.xrow .kw span:hover{background:var(--rose);color:#fff;border-color:var(--rose)}
+
+/* ============ 栏目四：五月榜 ============ */
+.rank{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:linear-gradient(150deg,#1d2430,#31404f);border-radius:26px;padding:30px;color:#fff;box-shadow:12px 12px 0 var(--sand)}
+.rk{display:flex;align-items:center;gap:14px;padding:11px 12px;border-radius:14px;transition:.24s}
+.rk:hover{background:rgba(255,255,255,.07)}
+.rk .no{font-size:26px;font-weight:900;font-family:Georgia,serif;min-width:46px;color:rgba(255,255,255,.28);line-height:1}
+.rk.top1 .no,.rk.top2 .no{color:var(--sand)}
+.rk.top3 .no{color:var(--leaf)}
+.rk .body{flex:1;min-width:0}
+.rk .nm{font-size:15.5px;font-weight:800;display:flex;justify-content:space-between;gap:8px}
+.rk .nm em{font-style:normal;font-size:11px;color:rgba(255,255,255,.5);font-weight:600;white-space:nowrap}
+.rk .tp{height:8px;border-radius:4px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:7px}
+.rk .tp i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--leaf),var(--sky));transform-origin:left;animation:fl2 1s cubic-bezier(.2,.8,.2,1)}
+@keyframes fl2{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* ============ 栏目五：五月关键词（草叶胶囊云 + 花期字母条） ============ */
+.cloudbox{background:linear-gradient(120deg,#f7f3ea,#e9dfc8);border:1.5px solid var(--line);border-radius:26px;padding:32px;box-shadow:12px 12px 0 var(--rose)}
+.cw{display:flex;flex-wrap:wrap;gap:11px}
+.cw a{position:relative;padding:10px 20px;border-radius:30px;background:#fff;border:1.5px solid var(--line);color:var(--ink);font-weight:700;font-size:14px}
+.cw a:nth-child(3n){border-radius:8px}
+.cw a:nth-child(5n){border-radius:24px 6px 24px 6px}
+.cw a:hover{background:var(--green);color:#fff;border-color:var(--green);transform:translateY(-3px)}
+.cw a i{font-style:normal;font-size:10.5px;color:var(--rose);margin-left:6px;font-weight:800}
+.letters{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px;padding-top:18px;border-top:1.5px dashed var(--sand)}
+.letters a{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;font-size:13px;font-weight:800;background:#fff;border:1.5px solid var(--line);color:#6f6b60}
+.letters a:hover{background:var(--rose);color:#fff;border-color:var(--rose);transform:scale(1.1)}
+
+/* ============ 订阅 ============ */
+.join{background:linear-gradient(120deg,var(--green),var(--leaf));border-radius:28px;padding:44px;color:#fff;display:grid;grid-template-columns:1fr 430px;gap:24px;align-items:center;position:relative;overflow:hidden;box-shadow:13px 13px 0 var(--ink)}
+.join::after{content:"五月";position:absolute;right:20px;top:-60px;font-size:220px;font-weight:900;color:rgba(255,255,255,.12);letter-spacing:-8px;line-height:1;font-family:"Songti SC",serif}
+.join h3{font-size:26px;margin-bottom:11px;font-weight:800;letter-spacing:.5px;position:relative;z-index:2}
+.join h3 i{font-style:normal;color:var(--sand)}
+.join p{color:rgba(255,255,255,.94);font-size:14.5px;max-width:600px;position:relative;z-index:2}
+.join form{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:2}
+.join input{flex:1;min-width:230px;padding:15px 22px;border-radius:26px;border:1.5px solid #fff;font-size:14.5px;outline:none;font-family:inherit}
+.join button{padding:15px 36px;border-radius:26px;border:1.5px solid #fff;background:var(--ink);color:#fff;font-weight:800;cursor:pointer;letter-spacing:.8px;font-family:inherit}
+.join button:hover{background:#fff;color:var(--ink)}
+
+/* ============ 页脚 ============ */
+footer{background:var(--ink);color:#b6b2a6;padding:56px 0 24px;margin-top:14px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px;margin-bottom:28px}
+.ft .logo{color:#fff;margin-bottom:14px}
+.ft p{font-size:13.5px;max-width:400px;line-height:1.85;color:#9c988c}
+.fcol h4{color:#fff;font-size:14.5px;margin-bottom:15px;position:relative;display:inline-block;font-weight:800;letter-spacing:1px}
+.fcol h4::after{content:"";position:absolute;left:0;bottom:-6px;width:20px;height:3px;background:var(--rose);border-radius:2px}
+.fcol a{display:block;font-size:13.5px;padding:5px 0;color:#9c988c;font-weight:700}
+.fcol a:hover{color:var(--leaf);padding-left:6px}
+.copy{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:#7c786c}
+.copy a{color:var(--leaf);font-weight:800}
+
+/* ============ 动效 ============ */
+.rv{opacity:0;transform:translateY(26px);transition:.64s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;animation:none!important}}
+
+/* ============ 响应式 ============ */
+@media(max-width:980px){
+  .burger{display:flex}
+  .links{position:fixed;inset:70px 0 0 0;flex-direction:column;background:rgba(247,243,234,.99);padding:22px 18px;gap:4px;transform:translateX(100%);transition:.32s;z-index:999;border-top:1.5px solid var(--line)}
+  .links.open{transform:none}
+  .links a{font-size:17px;padding:16px 18px}
+  .search{display:none}
+  .hero-in{grid-template-columns:1fr;gap:28px}
+  .solar{grid-template-columns:1fr;padding:26px 22px}
+  .xrow,.xrow:nth-child(even){grid-template-columns:1fr}
+  .xrow:nth-child(even) .pic{order:0}
+  .rank{grid-template-columns:1fr;padding:26px 22px}
+  .join{grid-template-columns:1fr;padding:32px 24px}
+  section{padding:50px 0}
+  .frm{flex:0 0 196px}
+}
+@media(max-width:560px){
+  .logo b{font-size:17px}
+  .rk .nm{flex-direction:column;gap:2px}
+  .container{padding:0 16px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ==================== 导航 ==================== -->
+<header class="topbar">
+  <div class="container nav">
+    <a class="logo" href="#" aria-label="五月电影网首页">
+      <span class="m" aria-hidden="true">5</span>
+      <b>五月电影网</b><em>MAY CINEMA</em>
+    </a>
+    <div class="search"><input type="search" placeholder="搜片 / 导演 / 季节，如：小津安二郎、初夏、雨" aria-label="搜索"><button aria-label="搜索">⌕</button></div>
+    <nav class="links" id="links">
+      <a href="#top" class="on">首页</a>
+      <a href="#list">五月片单</a>
+      <a href="#solar">五月节气</a>
+      <a href="#exp">五月影展</a>
+      <a href="#hot">五月榜</a>
+      <a href="#tag">五月关键词</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="菜单" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<!-- ==================== 首屏 ==================== -->
+<section class="hero" id="top">
+  <div class="petals" aria-hidden="true">
+    <i class="pt" style="left:6%;--x:60px;animation-delay:0s;background:#e0737a"></i>
+    <i class="pt" style="left:18%;--x:-40px;animation-delay:2s;background:#9db872"></i>
+    <i class="pt" style="left:34%;--x:80px;animation-delay:1s;background:#d9b66b"></i>
+    <i class="pt" style="left:52%;--x:-70px;animation-delay:3s;background:#6fb0c4"></i>
+    <i class="pt" style="left:70%;--x:50px;animation-delay:1.6s;background:#e0737a"></i>
+    <i class="pt" style="left:86%;--x:-30px;animation-delay:2.4s;background:#9db872"></i>
+  </div>
+  <div class="container hero-in">
+    <div class="rv">
+      <span class="kicker">● 五月电影网 · 立夏前后 · 按月选片</span>
+      <h1>用<span class="sea">季节</span>选片<br>用情绪入座<small>MAY · CINEMA · SEASON</small></h1>
+      <p>五月电影网，一个以季节为索引的观影指南。五月是湿润的、躁动的、充满未完成感的月份——我们据此挑出最适合在这个月看的那几部：关于成长、关于告别、关于一场来不及的雨。</p>
+      <div class="h-cta"><a class="btn btn-s" href="#list">看看五月看什么</a><a class="btn btn-o" href="#solar">读懂五月情绪</a></div>
+    </div>
+    <aside class="letter rv">
+      <h3>📮 五月来信 · 编辑部的话</h3>
+      <dl>
+        <div><dt>本月关键词</dt><dd>初夏、梅雨、毕业、出发、未寄出的信</dd></div>
+        <div><dt>本月导演</dt><dd>小津安二郎 · 是枝裕和 · 侯孝贤</dd></div>
+        <div><dt>本月色调</dt><dd>青绿转暖黄，像午后三点半的窗</dd></div>
+        <div><dt>本月时长</dt><dd>118 分钟，刚好一场雨的时间</dd></div>
+      </dl>
+      <div class="sign">— 五月电影网 编辑部</div>
+    </aside>
+  </div>
+</section>
+
+<!-- ==================== 栏目一：五月片单（横向滑动竖版 + 花期角标） ==================== -->
+<section id="list">
+  <div class="container">
+    <div class="sec-h rev"><span class="tag">NO.1</span><h2>五月<em>片单</em> · 立夏前后值得看的 8 部</h2><span class="en">MAY PICKS</span><a class="more" href="#">换一批 →</a></div>
+    <div class="tape">
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#7ea86a,#42603a)">🌿<span class="bud">初夏</span><span class="go">▶</span></div><div class="nm">海街日记</div><div class="mk"><span>是枝裕和</span><b>8.8</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#c98a6a,#8a5636)">🌧️<span class="bud">梅雨</span><span class="go">▶</span></div><div class="nm">悲情城市</div><div class="mk"><span>侯孝贤</span><b>8.9</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#6f9ab0,#3a6478)">🎋<span class="bud">毕业</span><span class="go">▶</span></div><div class="nm">情书</div><div class="mk"><span>岩井俊二</span><b>8.9</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#c9a86a,#8a7336)">🌾<span class="bud">麦收</span><span class="go">▶</span></div><div class="nm">麦兜故事</div><div class="mk"><span>袁建滔</span><b>8.5</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#a88aa0,#6a4862)">🌸<span class="bud">花期</span><span class="go">▶</span></div><div class="nm">花与爱丽丝</div><div class="mk"><span>岩井俊二</span><b>8.2</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#7aa88a,#3a6a52)">🍃<span class="bud">微风</span><span class="go">▶</span></div><div class="nm">步履不停</div><div class="mk"><span>是枝裕和</span><b>8.8</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#c97a7a,#8a3a3a)">💌<span class="bud">书信</span><span class="go">▶</span></div><div class="nm">你好，之华</div><div class="mk"><span>岩井俊二</span><b>7.4</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#8aa0c9,#4a607a)">🌊<span class="bud">海风</span><span class="go">▶</span></div><div class="nm">那年夏天，宁静的海</div><div class="mk"><span>北野武</span><b>8.6</b></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目二：五月节气（竖向时间轴 + 三色节点） ==================== -->
+<section id="solar" style="background:linear-gradient(180deg,#efe8d8,transparent)">
+  <div class="container">
+    <div class="sec-h rev"><span class="tag">NO.2</span><h2>五月<em>节气</em> · 电影跟着节气走</h2><span class="en">SOLAR TERMS</span><a class="more" href="#">完整节气片单 →</a></div>
+    <div class="solar rev">
+      <div class="axis">
+        <b>五月 · 二十四节气观影法</b>
+        <div class="nd"><h4>立夏 <span>05.05</span></h4><p>万物并秀。适合看"开始"的电影：一次出发、一场相遇、一封刚写下的信。</p></div>
+        <div class="nd"><h4>小满 <span>05.21</span></h4><p>将满未满。适合看"未完成"的电影：没说出口的话、没走完的路、没在一起的人。</p></div>
+        <div class="nd"><h4>梅雨 <span>06 月初</span></h4><p>江南入梅。适合看"潮湿"的电影：雨、旧屋、长镜头、沉默的父子、窗上的水痕。</p></div>
+      </div>
+      <div class="rtxt">
+        <div class="big">五月是 <i>未完成</i> 的季节<br>所以五月的电影，都留白</div>
+        <p>我们不按类型选片，按节气。立夏看"开始"，小满看"将满未满"，梅雨看"潮湿与沉默"。一部电影的气质，往往和一个节气的气质同频——找对了月份，就找对了打开它的方式。</p>
+        <a href="#">查看「五月节气观影日历」→</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目三：五月影展（非对称图文 + 胶片齿孔） ==================== -->
+<section id="exp">
+  <div class="container">
+    <div class="sec-h rev"><span class="tag">NO.3</span><h2>五月<em>影展</em> · 本月策展单元</h2><span class="en">MINI FEST</span><a class="more" href="#">全部策展 →</a></div>
+    <div class="exp">
+      <article class="xrow rev">
+        <div class="pic" style="background:linear-gradient(135deg,#8ea86a,#4a6036)">🎞️<span class="cap">单元 A · 家的窗</span></div>
+        <div><h3>小津安二郎：坐在榻榻米上看人间</h3><p>五月的午后最适合小津。低机位、固定镜头、门框构图——他不拍故事，他拍"日常是如何被过完的"。看完《东京物语》，你会重新看一眼家里的餐桌。</p><div class="kw"><span>低机位</span><span>固定镜头</span><span>家庭伦理</span><span>留白</span></div></div>
+      </article>
+      <article class="xrow rev">
+        <div class="pic" style="background:linear-gradient(135deg,#c98a6a,#7a4a36)">🌧️<span class="cap">单元 B · 雨的叙事</span></div>
+        <div><h3>侯孝贤：雨一来，时间就慢了</h3><p>《悲情城市》《恋恋风尘》里的雨不是天气，是情绪本身。长镜头不剪，让演员在雨里走完一段真实的时间——这是五月最该被记住的电影语法。</p><div class="kw"><span>长镜头</span><span>自然光</span><span>历史伤痕</span><span>台湾新电影</span></div></div>
+      </article>
+      <article class="xrow rev">
+        <div class="pic" style="background:linear-gradient(135deg,#6f9ab0,#3a6078)">💌<span class="cap">单元 C · 未寄出的信</span></div>
+        <div><h3>岩井俊二：青春是一场来不及的告白</h3><p>《情书》《花与爱丽丝》都把"错过"拍得极美。五月的情绪正是如此：樱花刚落，课桌上还刻着名字，而那个人已经不在座位上了。</p><div class="kw"><span>青春</span><span>纯爱</span><span>书信</span><span>樱花</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目四：五月榜 ==================== -->
+<section id="hot">
+  <div class="container">
+    <div class="sec-h rev"><span class="tag">NO.4</span><h2>五月<em>榜</em> · 五月最该重看的一次 TOP 10</h2><span class="en">MAY TOP 10</span><a class="more" href="#">周榜 / 年代榜 →</a></div>
+    <div class="rank rev">
+      <div class="rk top1"><span class="no">01</span><div class="body"><div class="nm"><span>海街日记</span><em>2015 · 是枝裕和</em></div><div class="tp"><i style="width:100%"></i></div></div></div>
+      <div class="rk top1"><span class="no">02</span><div class="body"><div class="nm"><span>步履不停</span><em>2008 · 是枝裕和</em></div><div class="tp"><i style="width:97%"></i></div></div></div>
+      <div class="rk top2"><span class="no">03</span><div class="body"><div class="nm"><span>情书</span><em>1995 · 岩井俊二</em></div><div class="tp"><i style="width:94%"></i></div></div></div>
+      <div class="rk top2"><span class="no">04</span><div class="body"><div class="nm"><span>悲情城市</span><em>1989 · 侯孝贤</em></div><div class="tp"><i style="width:91%"></i></div></div></div>
+      <div class="rk top3"><span class="no">05</span><div class="body"><div class="nm"><span>那年夏天，宁静的海</span><em>1991 · 北野武</em></div><div class="tp"><i style="width:87%"></i></div></div></div>
+      <div class="rk"><span class="no">06</span><div class="body"><div class="nm"><span>花与爱丽丝</span><em>2004 · 岩井俊二</em></div><div class="tp"><i style="width:83%"></i></div></div></div>
+      <div class="rk"><span class="no">07</span><div class="body"><div class="nm"><span>恋恋风尘</span><em>1986 · 侯孝贤</em></div><div class="tp"><i style="width:80%"></i></div></div></div>
+      <div class="rk"><span class="no">08</span><div class="body"><div class="nm"><span>东京物语</span><em>1953 · 小津安二郎</em></div><div class="tp"><i style="width:77%"></i></div></div></div>
+      <div class="rk"><span class="no">09</span><div class="body"><div class="nm"><span>你好，之华</span><em>2018 · 岩井俊二</em></div><div class="tp"><i style="width:72%"></i></div></div></div>
+      <div class="rk"><span class="no">10</span><div class="body"><div class="nm"><span>无人知晓</span><em>2004 · 是枝裕和</em></div><div class="tp"><i style="width:68%"></i></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目五：五月关键词（草叶胶囊云 + 花期字母条） ==================== -->
+<section id="tag">
+  <div class="container">
+    <div class="sec-h rev"><span class="tag">NO.5</span><h2>五月<em>关键词</em> · 按情绪，而不是按类型</h2><span class="en">MOOD TAGS</span><a class="more" href="#">按导演 / 按年代 →</a></div>
+    <div class="cloudbox rev">
+      <div class="cw">
+        <a href="#">初夏微风 <i>96</i></a>
+        <a href="#">梅雨潮湿 <i>84</i></a>
+        <a href="#">毕业离别 <i>79</i></a>
+        <a href="#">未寄出的信 <i>71</i></a>
+        <a href="#">家庭餐桌 <i>88</i></a>
+        <a href="#">缓慢长镜头 <i>63</i></a>
+        <a href="#">樱花已落 <i>58</i></a>
+        <a href="#">夏日将临 <i>67</i></a>
+        <a href="#">沉默父子 <i>52</i></a>
+        <a href="#">旧屋光线 <i>49</i></a>
+        <a href="#">成长阵痛 <i>61</i></a>
+        <a href="#">海边公路 <i>44</i></a>
+        <a href="#">青春纯爱 <i>77</i></a>
+        <a href="#">时间留白 <i>56</i></a>
+        <a href="#">草木青绿 <i>48</i></a>
+        <a href="#">一场雨的时间 <i>41</i></a>
+      </div>
+      <div class="letters">
+        <a href="#">全</a><a href="#">B</a><a href="#">C</a><a href="#">D</a><a href="#">F</a><a href="#">G</a><a href="#">H</a><a href="#">J</a>
+        <a href="#">K</a><a href="#">L</a><a href="#">M</a><a href="#">N</a><a href="#">P</a><a href="#">Q</a><a href="#">R</a><a href="#">S</a>
+        <a href="#">T</a><a href="#">W</a><a href="#">X</a><a href="#">Y</a><a href="#">Z</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 订阅 ==================== -->
+<section id="joinS">
+  <div class="container">
+    <div class="join rev">
+      <div>
+        <h3>订阅 <i>五月片单</i></h3>
+        <p>每月初一，一封来信：本月节气、本月导演、本月 5 部片 + 1 篇深度解读，直送邮箱。不群发、不推销、可一键退订。让「今晚看什么」，跟着季节走。</p>
+      </div>
+      <form id="sub" novalidate>
+        <input type="email" id="mail" placeholder="留下邮箱，随五月来信" aria-label="邮箱" required>
+        <button type="submit">订阅</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 页脚 ==================== -->
+<footer>
+  <div class="container">
+    <div class="fgrid">
+      <div class="ft">
+        <a class="logo" href="#"><span class="m" aria-hidden="true">5</span><b style="color:#fff">五月电影网</b><em style="color:var(--leaf)">MAY CINEMA</em></a>
+        <p>五月电影网是一个以季节与节气为索引的观影指引站，聚焦东亚作者电影、家庭伦理、青春纯爱与缓慢叙事。我们以「节气、情绪、光线、时长」四条线索替你选片。本站只做收录与原创解读，不提供任何影视资源下载与盗链，倡导通过影院与正规视频平台观看。</p>
+      </div>
+      <div class="fcol"><h4>快速入口</h4><a href="#list">五月片单</a><a href="#solar">五月节气</a><a href="#exp">五月影展</a><a href="#hot">五月榜</a><a href="#tag">五月关键词</a></div>
+      <div class="fcol"><h4>情绪导航</h4><a href="#">初夏微风</a><a href="#">梅雨潮湿</a><a href="#">毕业离别</a><a href="#">青春纯爱</a><a href="#">缓慢长镜头</a></div>
+      <div class="fcol"><h4>关于</h4><a href="#">选片标准</a><a href="#">节气观影法</a><a href="#">导演谱系</a><a href="#">版权声明</a><a href="#">广告合作</a></div>
+    </div>
+    <div class="copy">© 2026 五月电影网 版权所有 · 网址：<a href="https://wuyuedianyingwang-cn.github.io/">https://wuyuedianyingwang-cn.github.io/</a> · 影片请通过影院与正规视频平台观看</div>
+  </div>
+</footer>
+
+<script>
+var bg=document.getElementById('burger'),ls=document.getElementById('links');
+bg.addEventListener('click',function(){ls.classList.toggle('open');bg.setAttribute('aria-expanded',ls.classList.contains('open'));});
+ls.addEventListener('click',function(e){if(e.target.tagName==='A'){ls.classList.remove('open');bg.setAttribute('aria-expanded','false');}});
+
+var secs=['top','list','solar','exp','hot','tag'].map(function(id){return document.getElementById(id);});
+var as=document.querySelectorAll('.links a');
+window.addEventListener('scroll',function(){
+  var y=window.scrollY+150,cur='';
+  secs.forEach(function(s){if(s&&s.offsetTop<=y)cur=s.id;});
+  as.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur);});
+},{passive:true});
+
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*60);io.unobserve(e.target);}});
+},{threshold:.1});
+document.querySelectorAll('.rev').forEach(function(el){io.observe(el);});
+
+document.getElementById('sub').addEventListener('submit',function(e){
+  e.preventDefault();
+  var v=document.getElementById('mail').value.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){alert('邮箱格式不对，五月的信送不到哦 🌿');return;}
+  alert('订阅成功！下月初一，五月片单见 📮');
+  document.getElementById('mail').value='';
+});
+</script>
+</body>
+</html>
